@@ -24,4 +24,14 @@ public class WebDriverFactory {
         return driver;
     }
 
+    public void quitDriver() {
+        if (driver != null) {
+            try {
+                driver.quit();
+            } catch (Exception e) {
+                System.err.println("Failed to close the browser: " + e.getMessage());
+            }
+        }
+    }
+
 }
