@@ -3,8 +3,8 @@
 
 <suite name="TestNG Capstone Tests">
     <test thread-count="5" name="Capstone Tests">
-    <packages>
-        <package name="capstoneframework.capstonetests"/>
-    </packages>
+        <packages>
+            <package name="capstoneframework.capstonetests"/>
+        </packages>
     </test>
 </suite>
