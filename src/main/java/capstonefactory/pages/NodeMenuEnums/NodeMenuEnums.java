@@ -4,9 +4,8 @@ public enum NodeMenuEnums {
 
     EDIT("Edit"),
     CLICK("Click"),
-    DROP_DOWN("Drop-Down"),
+    SELECT("Drop-Down"),
     ALERT("Dialog"),
-    FRAME("Inner HTML"),
     RADIO("Toggle"),
     WINDOW("Tabs"),
     ELEMENTS("Find Elements"),
@@ -14,12 +13,9 @@ public enum NodeMenuEnums {
     DROP("AUI-2"),
     SORT("AUI-3"),
     MULTI_SELECT("AUI-4"),
-    SLIDER("AUI-5"),
-    TABLE("Simple Table"),
     WAITS("Timeout"),
     FORMS("All in One"),
-    FILE("File Management"),
-    SHADOW("DOM");
+    FILE("File Management");
 
     private final String nodes;
 
