@@ -2,6 +2,7 @@ package capstonefactory.pages;
 
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class EditPage extends BasePage {
 
@@ -23,18 +24,18 @@ public class EditPage extends BasePage {
 
     public void editApplication(String fullNames, String text) {
         uiHelper.sendKeys(fullName, fullNames);
-        uiHelper.sendKeysTabs(fullName);
+        driver.findElement(fullName).sendKeys(Keys.TAB);
         By appendText = By.cssSelector("#join.input");
-        uiHelper.sendKeysRight(appendText);
+        driver.findElement(appendText).sendKeys(Keys.ARROW_RIGHT);
         uiHelper.sendKeys(appendText, text);
-        uiHelper.sendKeysTabs(appendText);
+        driver.findElement(appendText).sendKeys(Keys.TAB);
         By attributeLocator = By.id("getMe");
         String domAttribute = driver.findElement(attributeLocator).getDomAttribute("placeholder");
         System.out.println("Attribute of locator is: " + domAttribute);
-        uiHelper.sendKeysTabs(attributeLocator);
+        driver.findElement(attributeLocator).sendKeys(Keys.TAB);
         By clearText = By.id("clearMe");
         driver.findElement(clearText).clear();
-        uiHelper.sendKeysTabs(clearText);
+        driver.findElement(clearText).sendKeys(Keys.TAB);
     }
 
 }
