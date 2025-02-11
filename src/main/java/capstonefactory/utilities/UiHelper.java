@@ -21,4 +21,9 @@ public class UiHelper extends BasePage {
         element.sendKeys(Keys.TAB);
     }
 
+    public void sendKeysRight(By locator) {
+        WebElement element = driver.findElement(locator);
+        element.sendKeys(Keys.ARROW_RIGHT);
+    }
+
 }

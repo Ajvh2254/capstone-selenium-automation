@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 
 public class EditPage extends BasePage {
 
+    By fullName = By.id("fullName");
+
     public EditPage() {
         super();
     }
@@ -15,12 +17,24 @@ public class EditPage extends BasePage {
     }
 
     public EditPage clickFullNameLink() {
-        By fullName = By.id("fullName");
+        click.waitAndClick(fullName);
         return this;
     }
 
-    public void fillOutApplication(String fullName) {
-
+    public void editApplication(String fullNames, String text) {
+        uiHelper.sendKeys(fullName, fullNames);
+        uiHelper.sendKeysTabs(fullName);
+        By appendText = By.cssSelector("#join.input");
+        uiHelper.sendKeysRight(appendText);
+        uiHelper.sendKeys(appendText, text);
+        uiHelper.sendKeysTabs(appendText);
+        By attributeLocator = By.id("getMe");
+        String domAttribute = driver.findElement(attributeLocator).getDomAttribute("placeholder");
+        System.out.println("Attribute of locator is: " + domAttribute);
+        uiHelper.sendKeysTabs(attributeLocator);
+        By clearText = By.id("clearMe");
+        driver.findElement(clearText).clear();
+        uiHelper.sendKeysTabs(clearText);
     }
 
 }
