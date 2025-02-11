@@ -3,6 +3,7 @@ package capstonefactory.pages;
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 
 public class EditPage extends BasePage {
 
@@ -36,6 +37,10 @@ public class EditPage extends BasePage {
         By clearText = By.id("clearMe");
         driver.findElement(clearText).clear();
         driver.findElement(clearText).sendKeys(Keys.TAB);
+        By enabledElement = By.id("noEdit");
+        boolean isElementEnabled = driver.findElement(enabledElement).isEnabled();
+        Assert.assertTrue(isElementEnabled, "The element is disabled");
+        driver.findElement(enabledElement).sendKeys(Keys.TAB);
     }
 
 }
