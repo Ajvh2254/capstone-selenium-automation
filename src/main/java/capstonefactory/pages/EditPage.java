@@ -13,11 +13,6 @@ public class EditPage extends BasePage {
         super();
     }
 
-    public EditPage openEditPage() {
-        driver.get("https://letcode.in/edit");
-        return this;
-    }
-
     public EditPage clickFullNameLink() {
         click.waitAndClick(fullName);
         return this;

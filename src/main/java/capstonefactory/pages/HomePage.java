@@ -21,9 +21,4 @@ public class HomePage extends BasePage {
         }
     }
 
-    public void commonPageObject() {
-        By pageObject = By.cssSelector("a#testing.navbar-item.is-tab");
-        click.waitAndClick(pageObject, 3000);
-    }
-
 }

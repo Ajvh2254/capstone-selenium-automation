@@ -2,7 +2,6 @@ package capstonefactory.utilities;
 
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class UiHelper extends BasePage {
