@@ -18,7 +18,7 @@ public class EditPage extends BasePage {
         return this;
     }
 
-    public void editApplication(String fullNames, String text) {
+    public EditPage editApplication(String fullNames, String text) {
         uiHelper.sendKeys(fullName, fullNames);
         driver.findElement(fullName).sendKeys(Keys.TAB);
         By appendText = By.cssSelector("#join.input");
@@ -36,6 +36,11 @@ public class EditPage extends BasePage {
         boolean isElementEnabled = driver.findElement(enabledElement).isEnabled();
         Assert.assertTrue(isElementEnabled, "The element is disabled");
         driver.findElement(enabledElement).sendKeys(Keys.TAB);
+        return this;
+    }
+
+    public void clickWorkSpaceBtn() {
+        CommonPage.workSpaceBtn();
     }
 
 }

@@ -21,4 +21,8 @@ public class HomePage extends BasePage {
         }
     }
 
+    public void clickWorkSpaceBtn() {
+        CommonPage.workSpaceBtn();
+    }
+
 }
