@@ -3,6 +3,7 @@ package capstonefactory.pages;
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class EditPage extends BasePage {
@@ -36,6 +37,8 @@ public class EditPage extends BasePage {
         boolean isElementEnabled = driver.findElement(enabledElement).isEnabled();
         Assert.assertTrue(isElementEnabled, "The element is disabled");
         driver.findElement(enabledElement).sendKeys(Keys.TAB);
+        WebElement readOnly = driver.findElement(By.id("dontwrite"));
+        Assert.assertTrue(readOnly.getDomAttribute("readonly").equals("true"), "Element is readonly");
         return this;
     }
 

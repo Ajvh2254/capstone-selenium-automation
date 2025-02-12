@@ -25,4 +25,8 @@ public class HomePage extends BasePage {
         CommonPage.workSpaceBtn();
     }
 
+    public void clickButtonLink() {
+        click.waitAndClick(By.linkText("Click"));
+    }
+
 }
