@@ -23,7 +23,7 @@ public enum NodeMenuEnums {
         this.nodes = nodes;
     }
 
-    public String getNodes() {
+    public String getText() {
         return nodes;
     }
 
