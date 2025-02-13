@@ -14,29 +14,29 @@ public class EditPage extends BasePage {
         super();
     }
 
-    public EditPage clickFullNameLink() {
+    public EditPage clickFullNameTextBox() {
         click.waitAndClick(fullName);
         return this;
     }
 
     public EditPage editApplication(String fullNames, String text) {
         uiHelper.sendKeys(fullName, fullNames);
-        driver.findElement(fullName).sendKeys(Keys.TAB);
+        uiHelper.sendKeysTAB(fullName);
         By appendText = By.cssSelector("#join.input");
         driver.findElement(appendText).sendKeys(Keys.ARROW_RIGHT);
         uiHelper.sendKeys(appendText, text);
-        driver.findElement(appendText).sendKeys(Keys.TAB);
+        uiHelper.sendKeysTAB(appendText);
         By attributeLocator = By.id("getMe");
         String domAttribute = driver.findElement(attributeLocator).getDomAttribute("placeholder");
         System.out.println("Attribute of locator is: " + domAttribute);
-        driver.findElement(attributeLocator).sendKeys(Keys.TAB);
+        uiHelper.sendKeysTAB(attributeLocator);
         By clearText = By.id("clearMe");
         driver.findElement(clearText).clear();
-        driver.findElement(clearText).sendKeys(Keys.TAB);
+        uiHelper.sendKeysTAB(clearText);
         By enabledElement = By.id("noEdit");
         boolean isElementEnabled = driver.findElement(enabledElement).isEnabled();
         Assert.assertTrue(isElementEnabled, "The element is disabled");
-        driver.findElement(enabledElement).sendKeys(Keys.TAB);
+        uiHelper.sendKeysTAB(enabledElement);
         WebElement readOnly = driver.findElement(By.id("dontwrite"));
         Assert.assertTrue(readOnly.getDomAttribute("readonly").equals("true"), "Element is readonly");
         return this;

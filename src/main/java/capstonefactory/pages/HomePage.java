@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
     }
 
     private By parentSectionContainer(NodeMenuEnums btnSelection) {
-        return By.xpath(String.format("(//app-test-site)[1]/section[2]//app-menu//footer//a[contains(text(), '%s')]", btnSelection.getText()));
+        return By.xpath(String.format("a[contains(text(), '%s']", btnSelection.getText()));
     }
 
     public void selectTestSection(NodeMenuEnums btnSelection) {
@@ -26,10 +26,6 @@ public class HomePage extends BasePage {
 
     public void clickWorkSpaceBtn() {
         CommonPage.workSpaceBtn();
-    }
-
-    public void clickButtonLink() {
-        click.waitAndClick(By.linkText("Click"));
     }
 
 }
