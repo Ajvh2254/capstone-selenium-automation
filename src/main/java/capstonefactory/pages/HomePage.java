@@ -24,8 +24,4 @@ public class HomePage extends BasePage {
         click.waitAndClick(parentSection);
     }
 
-    public void clickWorkSpaceBtn() {
-        CommonPage.workSpaceBtn();
-    }
-
 }

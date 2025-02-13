@@ -9,7 +9,7 @@ public class CommonPage extends BasePage {
         super();
     }
 
-    public static void workSpaceBtn() {
+    public static void clickWorkSpaceBtn() {
         By pageObject = By.cssSelector("a#testing.navbar-item.is-tab");
         click.waitAndClick(pageObject, 3000);
     }

@@ -3,8 +3,6 @@ package capstonefactory.pages;
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class EditPage extends BasePage {
 
@@ -42,10 +40,6 @@ public class EditPage extends BasePage {
 
         elementAttributes.getElementAttributeDOM(By.id("dontwrite"), "readonly");
         return this;
-    }
-
-    public void clickWorkSpaceBtn() {
-        CommonPage.workSpaceBtn();
     }
 
 }
