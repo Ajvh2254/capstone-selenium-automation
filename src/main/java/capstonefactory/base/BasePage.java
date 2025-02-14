@@ -12,12 +12,14 @@ public class BasePage {
     protected static UiHelper uiHelper;
     protected static IsEnabled isEnabled;
     protected static ElementAttributes elementAttributes;
+    protected static Scroll scroll;
 
     static {
         click = new Click();
         uiHelper = new UiHelper();
         isEnabled = new IsEnabled();
         elementAttributes = new ElementAttributes();
+        scroll = new Scroll();
     }
 
     public BasePage() {
