@@ -1,4 +1,4 @@
-package capstonefactory.pages.NodeMenuEnums;
+package capstonefactory.pages.enums;
 
 public enum NodeMenuEnums {
 

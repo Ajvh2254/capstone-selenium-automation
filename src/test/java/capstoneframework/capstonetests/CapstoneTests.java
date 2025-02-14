@@ -6,6 +6,6 @@ import org.testng.annotations.Test;
 public class CapstoneTests extends BaseTests {
 
     @Test
-    public void capstonetest() {
+    public void capstoneTest() {
     }
 }

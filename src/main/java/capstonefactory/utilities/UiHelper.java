@@ -13,10 +13,12 @@ public class UiHelper extends BasePage {
 
     public void sendKeys(By locator, String text) {
         WebElement element = driver.findElement(locator);
+        System.out.println("Sends string text");
         element.sendKeys(text);
     }
 
     public void sendKeysTAB(By locator) {
+        System.out.println("Tabs over to next box");
         driver.findElement(locator).sendKeys(Keys.TAB);
     }
 

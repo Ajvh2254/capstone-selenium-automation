@@ -1,7 +1,7 @@
 package capstonefactory.pages;
 
 import capstonefactory.base.BasePage;
-import capstonefactory.pages.NodeMenuEnums.NodeMenuEnums;
+import capstonefactory.pages.enums.NodeMenuEnums;
 import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
     }
 
     private By parentSectionContainer(NodeMenuEnums btnSelection) {
-        return By.xpath(String.format("a[contains(text(), '%s']", btnSelection.getText()));
+        return By.xpath(String.format("(//section)[2]//app-menu//footer//a[contains(text(), '%s')]", btnSelection.getText()));
     }
 
     public void selectTestSection(NodeMenuEnums btnSelection) {

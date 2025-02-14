@@ -17,7 +17,7 @@ public class EditPage extends BasePage {
         return this;
     }
 
-    public EditPage editApplication(String fullNames, String text) {
+    public void editApplication(String fullNames, String text) {
         uiHelper.sendKeys(fullName, fullNames);
         uiHelper.sendKeysTAB(fullName);
 
@@ -34,12 +34,11 @@ public class EditPage extends BasePage {
         driver.findElement(clearText).clear();
         uiHelper.sendKeysTAB(clearText);
 
-        By enabledElement = By.id("noEdit");
-        isEnabled.isEnabled(enabledElement);
-        uiHelper.sendKeysTAB(enabledElement);
+        By disabledElement = By.id("noEdit");
+        isEnabled.isDisabled(disabledElement);
+        uiHelper.sendKeysTAB(disabledElement);
 
         elementAttributes.getElementAttributeDOM(By.id("dontwrite"), "readonly");
-        return this;
     }
 
 }

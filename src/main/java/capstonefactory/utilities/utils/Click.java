@@ -15,20 +15,19 @@ public class Click extends BasePage {
     }
 
     public void click(By locator) {
-        System.out.println("Clicking on element using JavaScript: " + locator);
+        System.out.println("Clicking on element: " + locator);
         try {
             waiterUtilities.waitForElementToBeClickable(driver, 5, locator);
             WebElement element = driver.findElement(locator);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", element);
         } catch (Exception e) {
-            System.out.println("Failed to click on element using JavaScript: " + locator);
+            System.out.println("Failed to click on element: " + locator);
             e.printStackTrace();
         }
     }
 
     public void waitAndClick(By locator, long milliseconds) {
-        System.out.println("Waiting for element to be visible: " + locator);
         waiterUtilities.waitForVisibilityOfElement(driver, milliseconds, locator);
         click(locator);
         System.out.println("Clicked on element: " + locator);
