@@ -1,8 +1,8 @@
 package capstonefactory.pages;
 
 import capstonefactory.base.BasePage;
+import capstonefactory.pages.enums.NodeMenuEnums;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
 
@@ -15,15 +15,13 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    private void parentSectionContainer(String nodeMenuEnums, String nodeSelection) {
-        WebElement parentElement = driver.findElement(By.xpath("//div[@class='column is-3-desktop is-6-tablet'][%s]"));
-        for (int i = 0; i < nodeSelection.length(); i++) {
-        }
+    private By parentSectionContainer(NodeMenuEnums btnSelection) {
+        return By.xpath(String.format("(//section)[2]//app-menu//footer//a[contains(text(), '%s')]", btnSelection.getText()));
     }
 
-    public void commonPageObject() {
-        By pageObject = By.cssSelector("a#testing.navbar-item.is-tab");
-        click.waitAndClick(pageObject, 3000);
+    public void selectTestSection(NodeMenuEnums btnSelection) {
+        By parentSection = parentSectionContainer(btnSelection);
+        click.waitAndClick(parentSection);
     }
 
 }

@@ -1,4 +1,4 @@
-package capstonefactory.pages.NodeMenuEnums;
+package capstonefactory.pages.enums;
 
 public enum NodeMenuEnums {
 
@@ -23,7 +23,7 @@ public enum NodeMenuEnums {
         this.nodes = nodes;
     }
 
-    public String getNodes() {
+    public String getText() {
         return nodes;
     }
 
