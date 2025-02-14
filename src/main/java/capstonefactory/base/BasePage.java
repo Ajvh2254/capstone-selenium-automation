@@ -1,6 +1,6 @@
 package capstonefactory.base;
 
-import capstonefactory.utilities.UiHelper;
+import capstonefactory.utilities.utils.UiHelper;
 import capstonefactory.utilities.utils.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
