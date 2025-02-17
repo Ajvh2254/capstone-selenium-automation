@@ -1,5 +1,6 @@
 package capstonefactory.base;
 
+import capstonefactory.utilities.WaiterUtilities;
 import capstonefactory.utilities.utils.UiHelper;
 import capstonefactory.utilities.utils.*;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ public class BasePage {
     protected static IsEnabled isEnabled;
     protected static ElementAttributes elementAttributes;
     protected static Scroll scroll;
+    protected static WaiterUtilities waiterUtilities;
 
     static {
         click = new Click();
@@ -20,6 +22,7 @@ public class BasePage {
         isEnabled = new IsEnabled();
         elementAttributes = new ElementAttributes();
         scroll = new Scroll();
+        waiterUtilities = new WaiterUtilities();
     }
 
     public BasePage() {

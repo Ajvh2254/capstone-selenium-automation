@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class Click extends BasePage {
 
-    WaiterUtilities waiterUtilities = new WaiterUtilities();
-
     public Click() {
         super();
     }
