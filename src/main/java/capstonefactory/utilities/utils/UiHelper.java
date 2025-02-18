@@ -1,4 +1,4 @@
-package capstonefactory.utilities;
+package capstonefactory.utilities.utils;
 
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;

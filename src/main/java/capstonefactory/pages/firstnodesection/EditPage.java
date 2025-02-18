@@ -1,4 +1,4 @@
-package capstonefactory.pages;
+package capstonefactory.pages.firstnodesection;
 
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
