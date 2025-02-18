@@ -13,6 +13,7 @@ public class BaseTests extends WebDriverFactory {
     public void launchApplication() throws IOException {
         driver = initializeDriver();
         BasePage.setDriver(driver);
+        driver.manage().window().maximize();
     }
 
     @AfterMethod

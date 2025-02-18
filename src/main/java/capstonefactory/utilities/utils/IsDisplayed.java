@@ -1,7 +1,6 @@
 package capstonefactory.utilities.utils;
 
 import capstonefactory.base.BasePage;
-import capstonefactory.utilities.WaiterUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
