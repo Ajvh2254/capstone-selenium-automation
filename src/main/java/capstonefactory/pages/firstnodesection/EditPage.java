@@ -12,6 +12,11 @@ public class EditPage extends BasePage {
         super();
     }
 
+    public EditPage isInputHeaderDisplayed() {
+        isDisplayed.waitAndIsDisplayed(By.linkText(" Input"));
+        return this;
+    }
+
     public EditPage clickFullNameTextBox() {
         click.waitAndClick(fullName);
         return this;

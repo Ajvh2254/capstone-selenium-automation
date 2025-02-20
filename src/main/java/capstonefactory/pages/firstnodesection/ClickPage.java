@@ -9,6 +9,11 @@ public class ClickPage extends BasePage {
         super();
     }
 
+    public ClickPage isButtonHeaderDisplayed() {
+        isDisplayed.waitAndIsDisplayed(By.linkText(" Button"));
+        return this;
+    }
+
     public ClickPage clickGoToHomeBtn() {
         click.waitAndClick(By.cssSelector("#home.button.is-link"));
         return this;
