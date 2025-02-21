@@ -8,9 +8,19 @@ public class Alerts extends BasePage {
         super();
     }
 
-    public void switchToAlert() {
+    public void acceptAlerts() {
         System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
+    }
+
+    public void dismissAlerts() {
+        System.out.println(driver.switchTo().alert().getText());
+        driver.switchTo().alert().dismiss();
+    }
+
+    public void promptAlerts(String text) {
+        System.out.println(driver.switchTo().alert().getText());
+        driver.switchTo().alert().sendKeys(text);
     }
 
 }
