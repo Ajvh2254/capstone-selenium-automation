@@ -2,9 +2,9 @@ package capstonefactory.pages.secondnodesection;
 
 import capstonefactory.base.BasePage;
 
-public class RadioPage extends BasePage {
+public class TabsPage extends BasePage {
 
-    public RadioPage() {
+    public TabsPage() {
         super();
     }
 
