@@ -12,11 +12,6 @@ public class EditPage extends BasePage {
         super();
     }
 
-    public EditPage isInputHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.xpath("//div[@class='hero-body']//h1"));
-        return this;
-    }
-
     public EditPage clickFullNameTextBox() {
         click.waitAndClick(fullName);
         return this;

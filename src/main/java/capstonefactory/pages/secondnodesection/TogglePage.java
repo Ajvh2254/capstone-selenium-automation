@@ -9,11 +9,6 @@ public class TogglePage extends BasePage {
         super();
     }
 
-    public TogglePage isRadioHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.xpath("//h1[contains(text(), ' Radio & Checkbox')]"));
-        return this;
-    }
-
     public TogglePage clickCheckboxOption() {
         click.waitAndClick(By.cssSelector("input#yes"));
         return this;

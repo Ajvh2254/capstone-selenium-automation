@@ -12,11 +12,6 @@ public class ClickPage extends BasePage {
         super();
     }
 
-    public ClickPage isButtonHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.linkText(" Button"));
-        return this;
-    }
-
     public ClickPage getCoordinates() {
         Point location = driver.findElement(By.id("position")).getLocation();
         System.out.println("Location of X: " + location.getX() + "," + "Location of Y: " + location.getY());

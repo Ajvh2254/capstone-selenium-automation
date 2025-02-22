@@ -9,11 +9,6 @@ public class DialogPage extends BasePage {
         super();
     }
 
-    public DialogPage isAlertHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.linkText(" Alert"));
-        return this;
-    }
-
     public DialogPage clickSimpleAlertBtn() {
         click.waitAndClick(By.cssSelector("#accept.button.is-link"));
         return this;

@@ -13,11 +13,6 @@ public class DropdownPage extends BasePage {
         super();
     }
 
-    public DropdownPage isDropdownHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.linkText(" Dropdown"));
-        return this;
-    }
-
     public DropdownPage selectFruitByVisibleText() {
         Select select = new Select(driver.findElement(By.id("fruits")));
         select.selectByVisibleText("Orange");
