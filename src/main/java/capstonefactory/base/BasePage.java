@@ -19,7 +19,16 @@ public class BasePage {
     protected static DragAndDrop dragAndDrop;
     protected static WindowUtil windowUtil;
 
-    static {
+    public BasePage() {
+        PageFactory.initElements(driver, this);
+    }
+
+    public static void setDriver(WebDriver driver) {
+        BasePage.driver = driver;
+        initializeUtilities();
+    }
+
+    private static void initializeUtilities() {
         click = new Click();
         uiHelper = new UiHelper();
         isEnabled = new IsEnabled();
@@ -32,12 +41,5 @@ public class BasePage {
         windowUtil = new WindowUtil();
     }
 
-    public BasePage() {
-        PageFactory.initElements(driver, this);
-    }
-
-    public static void setDriver(WebDriver driver) {
-        BasePage.driver = driver;
-    }
 
 }
