@@ -12,15 +12,14 @@ public class ElementAttributes extends BasePage {
     }
 
     public void getElementAttributeDOM(By locator, String attribute) {
-        System.out.println("Checks if attribute is readonly");
+        System.out.println("Checks if " + attribute + " is readonly");
         WebElement domAttribute = driver.findElement(locator);
         Assert.assertEquals(domAttribute.getDomAttribute(attribute), "true", "Element is readonly");
     }
 
     public void getDOMAttribute(By locator, String attribute) {
-        System.out.println("Gets element attribute");
-        String domAttribute = driver.findElement(locator).getDomAttribute(attribute);
-        System.out.println("Attribute of locator is: " + domAttribute);
+        System.out.println("Gets element attribute: " + attribute);
+        driver.findElement(locator).getDomAttribute(attribute);
     }
 
 }

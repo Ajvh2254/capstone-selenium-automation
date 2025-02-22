@@ -13,7 +13,7 @@ public class UiHelper extends BasePage {
 
     public void sendKeys(By locator, String text) {
         WebElement element = driver.findElement(locator);
-        System.out.println("Sends string text");
+        System.out.println("Sends string text: " + text);
         element.sendKeys(text);
     }
 

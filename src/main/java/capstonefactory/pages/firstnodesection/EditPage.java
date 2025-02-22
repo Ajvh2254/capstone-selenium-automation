@@ -13,7 +13,7 @@ public class EditPage extends BasePage {
     }
 
     public EditPage isInputHeaderDisplayed() {
-        isDisplayed.waitAndIsDisplayed(By.linkText(" Input"));
+        isDisplayed.waitAndIsDisplayed(By.xpath("//div[@class='hero-body']//h1"));
         return this;
     }
 
@@ -39,11 +39,11 @@ public class EditPage extends BasePage {
         driver.findElement(clearText).clear();
         uiHelper.sendKeysTAB(clearText);
 
-        By disabledElement = By.id("noEdit");
-        isEnabled.isDisabled(disabledElement);
-        uiHelper.sendKeysTAB(disabledElement);
+        isEnabled.isDisabled(By.id("noEdit"));
 
-        elementAttributes.getElementAttributeDOM(By.id("dontwrite"), "readonly");
+        By readonly = By.id("dontwrite");
+        click.waitAndClick(readonly);
+        elementAttributes.getElementAttributeDOM(readonly, "readonly");
     }
 
 }

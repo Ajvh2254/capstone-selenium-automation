@@ -27,7 +27,6 @@ public class Click extends BasePage {
     public void waitAndClick(By locator, long milliseconds) {
         waiterUtilities.waitForVisibilityOfElement(driver, milliseconds, locator);
         click(locator);
-        System.out.println("Clicked on element: " + locator);
     }
 
     public void waitAndClick(By locator) {
