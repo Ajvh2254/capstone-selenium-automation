@@ -13,4 +13,5 @@ public class CapstoneTests extends BaseTests {
         homePage.openLetCodePage()
                 .selectTestSection(NodeMenuEnums.EDIT);
     }
+
 }

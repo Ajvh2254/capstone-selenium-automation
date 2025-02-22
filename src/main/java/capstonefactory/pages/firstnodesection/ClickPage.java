@@ -23,6 +23,12 @@ public class ClickPage extends BasePage {
         return this;
     }
 
+    public ClickPage getColor() {
+        String btnColor = driver.findElement(By.id("color")).getCssValue("background-color");
+        System.out.println("Button color is: " + btnColor);
+        return this;
+    }
+
     public ClickPage getSize() {
         Dimension size = driver.findElement(By.cssSelector("#property.button.is-success")).getSize();
         System.out.println("Width of button: " + size.getWidth() + "," + "Height of button: " + size.getHeight());
