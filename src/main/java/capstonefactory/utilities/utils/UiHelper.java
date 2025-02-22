@@ -18,7 +18,7 @@ public class UiHelper extends BasePage {
     }
 
     public void sendKeysTAB(By locator) {
-        System.out.println("Tabs over to next box");
+        System.out.println("Tabs over to: " + locator);
         driver.findElement(locator).sendKeys(Keys.TAB);
     }
 

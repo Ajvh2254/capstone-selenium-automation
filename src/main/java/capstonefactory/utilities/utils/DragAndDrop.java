@@ -20,7 +20,7 @@ public class DragAndDrop extends BasePage {
         actions.dragAndDrop(elementA, elementB).perform();
         String textTo = elementB.getText();
         if (textTo.equals(expectedText)) {
-            System.out.println("Element was dropped at location");
+            System.out.println("Element was dropped at: " + targetLocator);
         } else {
             System.out.println("Element was not dropped at location");
         }

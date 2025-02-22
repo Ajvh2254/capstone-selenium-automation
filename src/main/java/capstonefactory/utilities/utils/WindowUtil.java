@@ -33,7 +33,7 @@ public class WindowUtil extends BasePage {
     }
 
     public void openNewTabURL(String url) {
-        System.out.println("Opening new tab by url");
+        System.out.println("Opening new tab: " + url);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.open('" + url + "')");
     }
