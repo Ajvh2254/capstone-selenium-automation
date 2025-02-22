@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class CapstoneTests extends BaseTests {
 
     @Test
-    public void capstoneTest() {
+    public void capstoneTest() throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.openLetCodePage()
                 .selectTestSection(NodeMenuEnums.EDIT);
@@ -18,6 +18,7 @@ public class CapstoneTests extends BaseTests {
         EditPage editPage = new EditPage();
         editPage.clickFullNameTextBox()
                 .editApplication("Darryn Valentino", " at coding");
+        Thread.sleep(3000);
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -29,6 +30,7 @@ public class CapstoneTests extends BaseTests {
                 .getSize()
                 .isBtnDisabled()
                 .clickAndHoldBtn();
+        Thread.sleep(3000);
 
         CommonPage.clickWorkSpaceBtn();
     }

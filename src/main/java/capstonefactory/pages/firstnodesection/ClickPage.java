@@ -36,8 +36,7 @@ public class ClickPage extends BasePage {
     }
 
     public void clickAndHoldBtn() {
-        Actions actions = new Actions(driver);
-        actions.clickAndHold(driver.findElement(By.xpath("//h2[contains(text(), ' Button Hold!')]"))).build().perform();
+        click.clickAndHold(By.xpath("//h2[contains(text(), ' Button Hold!')]"));
     }
 
 }
