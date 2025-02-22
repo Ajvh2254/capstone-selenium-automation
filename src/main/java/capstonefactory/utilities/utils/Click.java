@@ -24,13 +24,9 @@ public class Click extends BasePage {
         }
     }
 
-    public void waitAndClick(By locator, long milliseconds) {
-        waiterUtilities.waitForVisibilityOfElement(driver, milliseconds, locator);
-        click(locator);
-    }
-
     public void waitAndClick(By locator) {
-        waitAndClick(locator, 2000);
+        waiterUtilities.waitForVisibilityOfElement(driver, 2000, locator);
+        click(locator);
     }
 
 }
