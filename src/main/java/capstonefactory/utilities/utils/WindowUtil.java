@@ -28,7 +28,6 @@ public class WindowUtil extends BasePage {
 
     public void switchToOriginalTab(int tabNumber) {
         driver.close();
-        System.out.println("Switch to original tab: " + tabNumber);
         switchToActiveTab(tabNumber);
     }
 

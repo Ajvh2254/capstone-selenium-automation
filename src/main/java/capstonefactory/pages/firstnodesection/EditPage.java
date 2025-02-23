@@ -18,21 +18,21 @@ public class EditPage extends BasePage {
     }
 
     public void editApplication(String fullNames, String text) {
-        uiHelper.sendKeys(fullName, fullNames);
-        uiHelper.sendKeysTAB(fullName);
+        sendKeys.sendKeys(fullName, fullNames);
+        sendKeys.sendKeysTAB(fullName);
 
         By appendText = By.cssSelector("#join.input");
         driver.findElement(appendText).sendKeys(Keys.ARROW_RIGHT);
-        uiHelper.sendKeys(appendText, text);
-        uiHelper.sendKeysTAB(appendText);
+        sendKeys.sendKeys(appendText, text);
+        sendKeys.sendKeysTAB(appendText);
 
         By attributeLocator = By.id("getMe");
         elementAttributes.getDOMAttribute(attributeLocator, "placeholder");
-        uiHelper.sendKeysTAB(attributeLocator);
+        sendKeys.sendKeysTAB(attributeLocator);
 
         By clearText = By.id("clearMe");
         driver.findElement(clearText).clear();
-        uiHelper.sendKeysTAB(clearText);
+        sendKeys.sendKeysTAB(clearText);
 
         isEnabled.isDisabled(By.id("noEdit"));
 
