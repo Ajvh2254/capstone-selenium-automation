@@ -6,6 +6,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class DropdownPage extends BasePage {
@@ -25,13 +26,8 @@ public class DropdownPage extends BasePage {
 
     public DropdownPage selectMultipleSuperHeroes(String [] listItems) {
         Select select = new Select(driver.findElement(By.id("superheros")));
-       for (String listItem : listItems) {
-           try {
-               select.selectByVisibleText(listItem);
-           } catch (NoSuchElementException e) {
-               System.out.println(listItem + " is not available");
-               e.printStackTrace();
-           }
+       List<WebElement> allHeroes = select.getAllSelectedOptions();
+       for (int i = 0; i < allHeroes.toArray().length; i++) {
        }
         return this;
     }

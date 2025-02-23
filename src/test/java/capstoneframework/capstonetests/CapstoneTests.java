@@ -61,6 +61,8 @@ public class CapstoneTests extends BaseTests {
         Thread.sleep(3000);
 
         CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.RADIO);
     }
 
 }
