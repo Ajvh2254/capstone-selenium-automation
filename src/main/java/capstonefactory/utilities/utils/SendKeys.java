@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class UiHelper extends BasePage {
+public class SendKeys extends BasePage {
 
-    public UiHelper() {
+    public SendKeys() {
         super();
     }
 
@@ -20,6 +20,11 @@ public class UiHelper extends BasePage {
     public void sendKeysTAB(By locator) {
         System.out.println("Tabs over to: " + locator);
         driver.findElement(locator).sendKeys(Keys.TAB);
+    }
+
+    public void sendKeysReturn(By locator) {
+        System.out.println("Sends RETURN Key to: " + locator);
+        driver.findElement(locator).sendKeys(Keys.RETURN);
     }
 
 }

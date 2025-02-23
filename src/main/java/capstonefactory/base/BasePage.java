@@ -9,7 +9,6 @@ public class BasePage {
 
     protected static WebDriver driver;
     protected static Click click;
-    protected static UiHelper uiHelper;
     protected static IsEnabled isEnabled;
     protected static ElementAttributes elementAttributes;
     protected static Scroll scroll;
@@ -18,6 +17,7 @@ public class BasePage {
     protected static IsDisplayed isDisplayed;
     protected static DragAndDrop dragAndDrop;
     protected static WindowUtil windowUtil;
+    protected static SendKeys sendKeys;
 
     public BasePage() {
         PageFactory.initElements(driver, this);
@@ -30,7 +30,6 @@ public class BasePage {
 
     private static void initializeUtilities() {
         click = new Click();
-        uiHelper = new UiHelper();
         isEnabled = new IsEnabled();
         elementAttributes = new ElementAttributes();
         scroll = new Scroll();
@@ -39,6 +38,7 @@ public class BasePage {
         isDisplayed = new IsDisplayed();
         dragAndDrop = new DragAndDrop();
         windowUtil = new WindowUtil();
+        sendKeys = new SendKeys();
     }
 
 
