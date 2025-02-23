@@ -4,6 +4,8 @@ import capstonefactory.pages.CommonPage;
 import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
+import capstonefactory.pages.secondnodesection.TabsPage;
+import capstonefactory.pages.secondnodesection.TogglePage;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 
@@ -63,6 +65,16 @@ public class CapstoneTests extends BaseTests {
         CommonPage.clickWorkSpaceBtn();
 
         homePage.selectTestSection(NodeMenuEnums.RADIO);
+
+        TogglePage togglePage = new TogglePage();
+        togglePage.clickCheckboxOption()
+                .isCheckboxSelected()
+                .isCheckboxBtnDisabled();
+        Thread.sleep(3000);
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.WINDOW);
     }
 
 }

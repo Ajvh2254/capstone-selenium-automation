@@ -26,9 +26,9 @@ public class DropdownPage extends BasePage {
 
     public DropdownPage selectMultipleSuperHeroes(String [] listItems) {
         Select select = new Select(driver.findElement(By.id("superheros")));
-       List<WebElement> allHeroes = select.getAllSelectedOptions();
-       for (WebElement element : allHeroes) {
-           System.out.println(element.getText());
+       List<WebElement> allHeroes = select.getOptions();
+       for (int i = 0; i < allHeroes.size(); i++) {
+           System.out.println(allHeroes.get(i).getText());
        }
         return this;
     }
