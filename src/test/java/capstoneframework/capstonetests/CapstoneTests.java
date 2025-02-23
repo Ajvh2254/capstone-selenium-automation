@@ -33,6 +33,18 @@ public class CapstoneTests extends BaseTests {
         Thread.sleep(3000);
 
         CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.SELECT);
+
+        DropdownPage dropdownPage = new DropdownPage();
+        dropdownPage.selectFruitByVisibleText()
+                .selectMultipleSuperHeroes(new String[]{"Aquaman", "Batman", "Green Lantern"})
+                .selectProgramLanguage()
+                .getLanguageOptions()
+                .selectCountryByValue();
+        Thread.sleep(3000);
+
+        CommonPage.clickWorkSpaceBtn();
     }
 
 }
