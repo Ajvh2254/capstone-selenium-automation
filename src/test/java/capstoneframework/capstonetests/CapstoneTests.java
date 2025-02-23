@@ -4,8 +4,7 @@ import capstonefactory.pages.CommonPage;
 import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
-import capstonefactory.pages.secondnodesection.TabsPage;
-import capstonefactory.pages.secondnodesection.TogglePage;
+import capstonefactory.pages.secondnodesection.*;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 
@@ -74,7 +73,13 @@ public class CapstoneTests extends BaseTests {
 
         CommonPage.clickWorkSpaceBtn();
 
-        homePage.selectTestSection(NodeMenuEnums.WINDOW);
+        homePage.selectTestSection(NodeMenuEnums.ELEMENTS);
+
+        ElementsPage elementsPage = new ElementsPage();
+        elementsPage.clickSearchBar()
+                .sendKeysToSearchbar("Ajvh2254")
+                .isImageDisplayed()
+                .printSearchInfo();
     }
 
 }
