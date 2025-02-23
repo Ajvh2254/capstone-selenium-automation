@@ -20,7 +20,7 @@ public class DialogPage extends BasePage {
     }
 
     public DialogPage clickConfirmAlertBtn() {
-        click.waitAndClick(By.className("button is-link is-outlined"));
+        click.waitAndClick(By.cssSelector("#confirm.button.is-link.is-outlined"));
         return this;
     }
 

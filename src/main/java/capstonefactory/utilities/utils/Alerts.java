@@ -19,7 +19,6 @@ public class Alerts extends BasePage {
     }
 
     public void promptAlerts(String text) {
-        System.out.println(driver.switchTo().alert().getText());
         driver.switchTo().alert().sendKeys(text);
     }
 

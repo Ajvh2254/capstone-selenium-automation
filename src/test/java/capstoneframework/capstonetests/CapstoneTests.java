@@ -45,6 +45,22 @@ public class CapstoneTests extends BaseTests {
         Thread.sleep(3000);
 
         CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.ALERT);
+
+        DialogPage dialogPage = new DialogPage();
+        dialogPage.clickSimpleAlertBtn()
+                .acceptSimpleAlertBtn()
+                .clickConfirmAlertBtn()
+                .dismissConfirmAlertBtn()
+                .clickPromptAlertBtn()
+                .fillOutPromptAlert()
+                .acceptPromptAlert()
+                .clickModernAlertBtn()
+                .dismissModernAlert();
+        Thread.sleep(3000);
+
+        CommonPage.clickWorkSpaceBtn();
     }
 
 }
