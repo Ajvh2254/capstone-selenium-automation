@@ -4,6 +4,7 @@ import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Click extends BasePage {
 
@@ -24,14 +25,15 @@ public class Click extends BasePage {
         }
     }
 
-    public void waitAndClick(By locator, long milliseconds) {
-        waiterUtilities.waitForVisibilityOfElement(driver, milliseconds, locator);
+    public void waitAndClick(By locator) {
+        waiterUtilities.waitForVisibilityOfElement(driver, 2000, locator);
         click(locator);
-        System.out.println("Clicked on element: " + locator);
     }
 
-    public void waitAndClick(By locator) {
-        waitAndClick(locator, 2000);
+    public void clickAndHold(By locator) {
+        Actions actions = new Actions(driver);
+        System.out.println("Clicks and holds " + locator + " with Actions");
+        actions.clickAndHold(driver.findElement(locator)).build().perform();
     }
 
 }

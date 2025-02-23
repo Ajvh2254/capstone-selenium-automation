@@ -19,13 +19,13 @@ public class Scroll extends BasePage {
     }
 
     public void scrollIntoView(By locator) {
-        System.out.println("Scrolling element into view");
+        System.out.println("Scrolling " + locator + " into view");
         WebElement scrollLink = driver.findElement(locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollLink);
     }
 
     public void scrollWithActions(By locator) {
-        System.out.println("Scrolling with actions");
+        System.out.println("Scrolling to " + locator + " with actions");
         WebElement scrollWithActions = driver.findElement(locator);
         Actions actions = new Actions(driver);
         actions.moveToElement(scrollWithActions).perform();
