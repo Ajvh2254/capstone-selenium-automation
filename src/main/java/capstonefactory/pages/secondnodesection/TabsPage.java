@@ -11,7 +11,7 @@ public class TabsPage extends BasePage {
 
     public TabsPage clickHomeBtn() throws InterruptedException {
         click.waitAndClick(By.id("home"));
-        Thread.sleep(3000);
+        waits.sleep();
         return this;
     }
 

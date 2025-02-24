@@ -18,6 +18,7 @@ public class BasePage {
     protected static DragAndDrop dragAndDrop;
     protected static WindowUtil windowUtil;
     protected static SendKeys sendKeys;
+    protected static Waits waits;
 
     public BasePage() {
         PageFactory.initElements(driver, this);
@@ -39,6 +40,7 @@ public class BasePage {
         dragAndDrop = new DragAndDrop();
         windowUtil = new WindowUtil();
         sendKeys = new SendKeys();
+        waits = new Waits();
     }
 
 
