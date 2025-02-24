@@ -8,7 +8,7 @@ public class Waits extends BasePage {
         super();
     }
 
-    public void sleep() {
+    public static void sleep() {
         System.out.println("Waits for 3 seconds");
         try {
             Thread.sleep(3000);

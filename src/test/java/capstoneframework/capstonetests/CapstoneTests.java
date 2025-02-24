@@ -6,6 +6,7 @@ import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
 import capstonefactory.pages.thirdnodesection.*;
+import capstonefactory.utilities.utils.Waits;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 
@@ -20,7 +21,7 @@ public class CapstoneTests extends BaseTests {
         EditPage editPage = new EditPage();
         editPage.clickFullNameTextBox()
                 .editApplication("Darryn Valentino", " at coding");
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -32,7 +33,7 @@ public class CapstoneTests extends BaseTests {
                 .getSize()
                 .isBtnDisabled()
                 .clickAndHoldBtn();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -44,7 +45,7 @@ public class CapstoneTests extends BaseTests {
                 .selectProgramLanguage()
                 .getLanguageOptions()
                 .selectCountryByValue();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -60,7 +61,7 @@ public class CapstoneTests extends BaseTests {
                 .acceptPromptAlert()
                 .clickModernAlertBtn()
                 .dismissModernAlert();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -70,7 +71,23 @@ public class CapstoneTests extends BaseTests {
         togglePage.clickCheckboxOption()
                 .isCheckboxSelected()
                 .isCheckboxBtnDisabled();
-        Thread.sleep(3000);
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.WINDOW);
+
+        TabsPage tabsPage = new TabsPage();
+        tabsPage.clickHomeBtn()
+                .printTitleNewTab()
+                .switchToChildWindow()
+                .closeChildWindow()
+                .clickMultipleWindowsBtn()
+                .printWindowTitle()
+                .switchToDropdownPage()
+                .closeDropdownPage()
+                .closeAlertPage();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -95,6 +112,15 @@ public class CapstoneTests extends BaseTests {
 
         DropPage dropPage = new DropPage();
         dropPage.dropAtTargetLocation();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.SORT);
+
+        SortPage sortPage = new SortPage();
+        sortPage.moveTODOElementsToDone();
+
+        CommonPage.clickWorkSpaceBtn();
     }
 
 }
