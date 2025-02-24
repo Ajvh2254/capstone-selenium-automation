@@ -4,6 +4,7 @@ import capstonefactory.pages.CommonPage;
 import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
+import capstonefactory.pages.fourthnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
 import capstonefactory.pages.thirdnodesection.*;
 import capstonefactory.utilities.utils.Waits;
@@ -123,6 +124,14 @@ public class CapstoneTests extends BaseTests {
         SortPage sortPage = new SortPage();
         sortPage.moveTODOElementsToDone();
         Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.WAITS);
+
+        WaitsPage waitsPage = new WaitsPage();
+        waitsPage.clickSimpleAlert()
+                .waitAndAcceptAlert();
 
         CommonPage.clickWorkSpaceBtn();
     }
