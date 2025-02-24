@@ -20,21 +20,25 @@ public class DragAndDrop extends BasePage {
         actions.dragAndDrop(elementA, elementB).perform();
         String textTo = elementB.getText();
         if (textTo.equals(expectedText)) {
-            System.out.println("Element was dropped at: " + targetLocator);
+            System.out.println(sourceLocator + " was dropped at: " + targetLocator);
         } else {
-            System.out.println("Element was not dropped at location");
+            System.out.println(sourceLocator + " was not dropped at: " + targetLocator);
         }
     }
 
     public void dragAndDropBy(int x, int y, By locator) {
         WebElement element = driver.findElement(locator);
+        System.out.println(locator + " dragged and dropped at " + x + " x coordinates and " + y + " y coordinates");
         actions.dragAndDropBy(element, x, y).build().perform();
     }
 
-    public void slideFromAndTo(WebElement sourceLocator, WebElement targetLocator) {
-        Action dragAndDrop = actions.clickAndHold(sourceLocator)
-                .moveToElement(targetLocator)
-                .release(targetLocator)
+    public void slideFromAndTo(By sourceLocator, By targetLocator) {
+        WebElement elementA = driver.findElement(sourceLocator);
+        WebElement elementB = driver.findElement(targetLocator);
+        System.out.println(sourceLocator + " was dropped at " + targetLocator);
+        Action dragAndDrop = actions.clickAndHold(elementA)
+                .moveToElement(elementB)
+                .release(elementB)
                 .build();
         dragAndDrop.perform();
     }

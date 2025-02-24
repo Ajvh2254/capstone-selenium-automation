@@ -5,13 +5,15 @@ import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
+import capstonefactory.pages.thirdnodesection.*;
+import capstonefactory.utilities.utils.Waits;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 
 public class CapstoneTests extends BaseTests {
 
     @Test
-    public void capstoneTest() throws InterruptedException {
+    public void capstoneTest() {
         HomePage homePage = new HomePage();
         homePage.openLetCodePage()
                 .selectTestSection(NodeMenuEnums.EDIT);
@@ -19,7 +21,7 @@ public class CapstoneTests extends BaseTests {
         EditPage editPage = new EditPage();
         editPage.clickFullNameTextBox()
                 .editApplication("Darryn Valentino", " at coding");
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -31,7 +33,7 @@ public class CapstoneTests extends BaseTests {
                 .getSize()
                 .isBtnDisabled()
                 .clickAndHoldBtn();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -43,7 +45,7 @@ public class CapstoneTests extends BaseTests {
                 .selectProgramLanguage()
                 .getLanguageOptions()
                 .selectCountryByValue();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -59,7 +61,7 @@ public class CapstoneTests extends BaseTests {
                 .acceptPromptAlert()
                 .clickModernAlertBtn()
                 .dismissModernAlert();
-        Thread.sleep(3000);
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -69,7 +71,23 @@ public class CapstoneTests extends BaseTests {
         togglePage.clickCheckboxOption()
                 .isCheckboxSelected()
                 .isCheckboxBtnDisabled();
-        Thread.sleep(3000);
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.WINDOW);
+
+        TabsPage tabsPage = new TabsPage();
+        tabsPage.clickHomeBtn()
+                .printTitleNewTab()
+                .switchToChildWindow()
+                .closeChildWindow()
+                .clickMultipleWindowsBtn()
+                .printWindowTitle()
+                .switchToDropdownPage()
+                .closeDropdownPage()
+                .closeAlertPage();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -80,6 +98,33 @@ public class CapstoneTests extends BaseTests {
                 .sendKeysToSearchbar("Ajvh2254")
                 .isImageDisplayed()
                 .printSearchInfo();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.DRAG);
+
+        DragPage dragPage = new DragPage();
+        dragPage.dragAndDropBox();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.DROP);
+
+        DropPage dropPage = new DropPage();
+        dropPage.dropAtTargetLocation();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.SORT);
+
+        SortPage sortPage = new SortPage();
+        sortPage.moveTODOElementsToDone();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
     }
 
 }

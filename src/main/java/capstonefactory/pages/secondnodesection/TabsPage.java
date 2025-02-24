@@ -9,32 +9,48 @@ public class TabsPage extends BasePage {
         super();
     }
 
-    public TabsPage clickHomeBtn() throws InterruptedException {
+    public TabsPage clickHomeBtn() {
         click.waitAndClick(By.id("home"));
-        Thread.sleep(3000);
         return this;
     }
 
-    public TabsPage printTitleNewTab() throws InterruptedException {
-        System.out.println(driver.findElement(By.xpath("//h1[@class='title has-text-centered']")));
-        Thread.sleep(3000);
+    public TabsPage printTitleNewTab() {
+        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
         return this;
     }
 
-    public TabsPage switchToParentWindow() throws InterruptedException {
-        windowUtil.switchToActiveTab(0);
-        Thread.sleep(3000);
+    public TabsPage switchToChildWindow() {
+        windowUtil.switchToActiveTab(1);
         return this;
     }
 
-    public TabsPage closeParentWindow() {
-        driver.close();
+    public TabsPage closeChildWindow() {
+        windowUtil.switchToOriginalTab(0);
         return this;
     }
 
-    public TabsPage openWindowsPage() {
-        driver.get("https://letcode.in/windows");
+    public TabsPage clickMultipleWindowsBtn() {
+        click.waitAndClick(By.xpath("//button[@id='multi']"));
         return this;
+    }
+
+    public TabsPage printWindowTitle() {
+        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
+        return this;
+    }
+
+    public TabsPage switchToDropdownPage() {
+        windowUtil.switchToActiveTab(1);
+        return this;
+    }
+
+    public TabsPage closeDropdownPage() {
+        windowUtil.switchToOriginalTab(1);
+        return this;
+    }
+
+    public void closeAlertPage() {
+        windowUtil.switchToOriginalTab(0);
     }
 
 }

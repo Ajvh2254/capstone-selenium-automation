@@ -4,7 +4,6 @@ import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.interactions.Actions;
 
 public class ClickPage extends BasePage {
 
