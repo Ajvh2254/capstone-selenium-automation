@@ -9,17 +9,17 @@ public class TabsPage extends BasePage {
         super();
     }
 
-    public TabsPage clickHomeBtn() throws InterruptedException {
+    public TabsPage clickHomeBtn() {
         click.waitAndClick(By.id("home"));
         return this;
     }
 
-    public TabsPage printTitleNewTab() throws InterruptedException {
+    public TabsPage printTitleNewTab() {
         isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
         return this;
     }
 
-    public TabsPage switchToChildWindow(){
+    public TabsPage switchToChildWindow() {
         windowUtil.switchToActiveTab(1);
         return this;
     }

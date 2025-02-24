@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class CapstoneTests extends BaseTests {
 
     @Test
-    public void capstoneTest() throws InterruptedException {
+    public void capstoneTest() {
         HomePage homePage = new HomePage();
         homePage.openLetCodePage()
                 .selectTestSection(NodeMenuEnums.EDIT);
@@ -98,6 +98,7 @@ public class CapstoneTests extends BaseTests {
                 .sendKeysToSearchbar("Ajvh2254")
                 .isImageDisplayed()
                 .printSearchInfo();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -105,6 +106,7 @@ public class CapstoneTests extends BaseTests {
 
         DragPage dragPage = new DragPage();
         dragPage.dragAndDropBox();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -112,6 +114,7 @@ public class CapstoneTests extends BaseTests {
 
         DropPage dropPage = new DropPage();
         dropPage.dropAtTargetLocation();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
 
@@ -119,6 +122,7 @@ public class CapstoneTests extends BaseTests {
 
         SortPage sortPage = new SortPage();
         sortPage.moveTODOElementsToDone();
+        Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
     }
