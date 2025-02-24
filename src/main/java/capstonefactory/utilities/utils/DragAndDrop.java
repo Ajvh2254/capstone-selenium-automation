@@ -32,11 +32,13 @@ public class DragAndDrop extends BasePage {
         actions.dragAndDropBy(element, x, y).build().perform();
     }
 
-    public void slideFromAndTo(WebElement sourceLocator, WebElement targetLocator) {
+    public void slideFromAndTo(By sourceLocator, By targetLocator) {
+        WebElement elementA = driver.findElement(sourceLocator);
+        WebElement elementB = driver.findElement(targetLocator);
         System.out.println(sourceLocator + " was dropped at " + targetLocator);
-        Action dragAndDrop = actions.clickAndHold(sourceLocator)
-                .moveToElement(targetLocator)
-                .release(targetLocator)
+        Action dragAndDrop = actions.clickAndHold(elementA)
+                .moveToElement(elementB)
+                .release(elementB)
                 .build();
         dragAndDrop.perform();
     }

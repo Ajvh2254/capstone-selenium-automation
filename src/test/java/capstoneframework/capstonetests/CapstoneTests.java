@@ -5,8 +5,7 @@ import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
-import capstonefactory.pages.thirdnodesection.DragPage;
-import capstonefactory.pages.thirdnodesection.DropPage;
+import capstonefactory.pages.thirdnodesection.*;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 

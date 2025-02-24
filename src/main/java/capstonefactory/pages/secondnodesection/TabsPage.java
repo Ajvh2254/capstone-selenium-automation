@@ -16,7 +16,7 @@ public class TabsPage extends BasePage {
     }
 
     public TabsPage printTitleNewTab() throws InterruptedException {
-        System.out.println(driver.findElement(By.xpath("//h1[@class='title has-text-centered']")));
+        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
         Thread.sleep(3000);
         return this;
     }
@@ -29,11 +29,6 @@ public class TabsPage extends BasePage {
 
     public TabsPage closeParentWindow() {
         driver.close();
-        return this;
-    }
-
-    public TabsPage openWindowsPage() {
-        driver.get("https://letcode.in/windows");
         return this;
     }
 
