@@ -5,6 +5,8 @@ import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
+import capstonefactory.pages.thirdnodesection.DragPage;
+import capstonefactory.pages.thirdnodesection.DropPage;
 import capstoneframework.basetest.BaseTests;
 import org.testng.annotations.Test;
 
@@ -80,6 +82,20 @@ public class CapstoneTests extends BaseTests {
                 .sendKeysToSearchbar("Ajvh2254")
                 .isImageDisplayed()
                 .printSearchInfo();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.DRAG);
+
+        DragPage dragPage = new DragPage();
+        dragPage.dragAndDropBox();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.DROP);
+
+        DropPage dropPage = new DropPage();
+        dropPage.dropAtTargetLocation();
     }
 
 }

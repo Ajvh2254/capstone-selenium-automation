@@ -9,13 +9,13 @@ public enum NodeMenuEnums {
     RADIO("Toggle"),
     WINDOW("Tabs"),
     ELEMENTS("Find Elements"),
-    DRAG("AUI-1"),
-    DROP("AUI-2"),
-    SORT("AUI-3"),
-    MULTI_SELECT("AUI-4"),
+    DRAG("AUI - 1"),
+    DROP("AUI - 2"),
+    SORT("AUI - 3"),
+    MULTI_SELECT("AUI - 4"),
     WAITS("Timeout"),
     FORMS("All in One"),
-    FILE("File Management");
+    FILE("File management");
 
     private final String nodes;
 
