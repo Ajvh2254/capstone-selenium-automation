@@ -2,7 +2,6 @@ package capstonefactory.pages.firstnodesection;
 
 import capstonefactory.base.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 public class EditPage extends BasePage {
 
@@ -17,13 +16,13 @@ public class EditPage extends BasePage {
         return this;
     }
 
-    public void editApplication(String fullNames, String text) {
-        sendKeys.sendKeys(fullName, fullNames);
+    public void editApplication() {
+        sendKeys.sendKeys(fullName, "Darryn Valentino");
         sendKeys.sendKeysTAB(fullName);
 
         By appendText = By.cssSelector("#join.input");
-        driver.findElement(appendText).sendKeys(Keys.ARROW_RIGHT);
-        sendKeys.sendKeys(appendText, text);
+        sendKeys.sendKeysRIGHT(appendText);
+        sendKeys.sendKeys(appendText, " at coding");
         sendKeys.sendKeysTAB(appendText);
 
         By attributeLocator = By.id("getMe");

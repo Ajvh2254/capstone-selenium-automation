@@ -21,7 +21,7 @@ public class CapstoneTests extends BaseTests {
 
         EditPage editPage = new EditPage();
         editPage.clickFullNameTextBox()
-                .editApplication("Darryn Valentino", " at coding");
+                .editApplication();
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
@@ -96,7 +96,7 @@ public class CapstoneTests extends BaseTests {
 
         ElementsPage elementsPage = new ElementsPage();
         elementsPage.clickSearchBar()
-                .sendKeysToSearchbar("Ajvh2254")
+                .sendKeysToSearchbar()
                 .isImageDisplayed()
                 .printSearchInfo();
         Waits.sleep();
@@ -134,6 +134,16 @@ public class CapstoneTests extends BaseTests {
                 .waitAndAcceptAlert();
 
         CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.FORMS);
+
+        FormsPage formsPage = new FormsPage();
+        formsPage.fillOutForm();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.FILE);
     }
 
 }
