@@ -13,7 +13,7 @@ public class ClickPage extends BasePage {
 
     public ClickPage getCoordinates() {
         Point location = driver.findElement(By.id("position")).getLocation();
-        System.out.println("Location of X: " + location.getX() + "," + "Location of Y: " + location.getY());
+        System.out.println("Location of X: " + location.getX() + "," + " Location of Y: " + location.getY());
         return this;
     }
 
@@ -25,7 +25,7 @@ public class ClickPage extends BasePage {
 
     public ClickPage getSize() {
         Dimension size = driver.findElement(By.cssSelector("#property.button.is-success")).getSize();
-        System.out.println("Width of button: " + size.getWidth() + "," + "Height of button: " + size.getHeight());
+        System.out.println("Width of button: " + size.getWidth() + "," + " Height of button: " + size.getHeight());
         return this;
     }
 

@@ -42,9 +42,10 @@ public class CapstoneTests extends BaseTests {
 
         DropdownPage dropdownPage = new DropdownPage();
         dropdownPage.selectFruitByVisibleText()
-                .selectMultipleSuperHeroes(new String[]{"Aquaman", "Batman", "Green Lantern"})
+                .selectMultipleSuperHeroes()
+                .getListOfSuperheroes()
                 .selectProgramLanguage()
-                .getLanguageOptions()
+                .getProgramLanguageList()
                 .selectCountryByValue();
         Waits.sleep();
 
@@ -142,8 +143,6 @@ public class CapstoneTests extends BaseTests {
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
-
-        homePage.selectTestSection(NodeMenuEnums.FILE);
     }
 
 }

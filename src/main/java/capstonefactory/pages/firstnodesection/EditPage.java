@@ -30,6 +30,7 @@ public class EditPage extends BasePage {
         sendKeys.sendKeysTAB(attributeLocator);
 
         By clearText = By.id("clearMe");
+        System.out.println("Clears text from box");
         driver.findElement(clearText).clear();
         sendKeys.sendKeysTAB(clearText);
 

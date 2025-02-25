@@ -24,7 +24,19 @@ public class DropdownPage extends BasePage {
         return this;
     }
 
-    public DropdownPage selectMultipleSuperHeroes(String [] listItems) {
+    public DropdownPage selectMultipleSuperHeroes() {
+        Select select = new Select(driver.findElement(By.id("superheros")));
+        select.selectByVisibleText("Ant-Man");
+        select.selectByVisibleText("Wolverine");
+        select.selectByVisibleText("Captain Marvel");
+        List<WebElement> superHeroes = select.getAllSelectedOptions();
+        for (WebElement superHero : superHeroes) {
+            System.out.println(superHero.getText());
+        }
+        return this;
+    }
+
+    public DropdownPage getListOfSuperheroes() {
         Select select = new Select(driver.findElement(By.id("superheros")));
        List<WebElement> allHeroes = select.getOptions();
        for (int i = 0; i < allHeroes.size(); i++) {
@@ -40,7 +52,7 @@ public class DropdownPage extends BasePage {
         return this;
     }
 
-    public DropdownPage getLanguageOptions() {
+    public DropdownPage getProgramLanguageList() {
         Select select = new Select(programLanguage);
         List<WebElement> programLang = select.getOptions();
         for (int j = 0; j < programLang.size(); j++) {
