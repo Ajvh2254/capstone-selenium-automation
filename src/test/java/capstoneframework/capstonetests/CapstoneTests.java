@@ -143,6 +143,19 @@ public class CapstoneTests extends BaseTests {
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.FILE);
+
+        FilePage filePage = new FilePage();
+        filePage.clickDownloadExcelBtn()
+                .uploadSampleFile()
+                .clickDownloadPdfBtn()
+                .uploadSamplePdf()
+                .clickDownloadTextBtn()
+                .uploadSampleText();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
     }
 
 }
