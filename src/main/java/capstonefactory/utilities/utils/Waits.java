@@ -17,4 +17,13 @@ public class Waits extends BasePage {
         }
     }
 
+    public static void waitAndSleep() {
+        System.out.println("Waits for 8 seconds");
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

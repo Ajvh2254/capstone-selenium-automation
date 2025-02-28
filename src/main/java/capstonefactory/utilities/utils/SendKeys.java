@@ -22,9 +22,14 @@ public class SendKeys extends BasePage {
         driver.findElement(locator).sendKeys(Keys.TAB);
     }
 
-    public void sendKeysReturn(By locator) {
+    public void sendKeysRETURN(By locator) {
         System.out.println("Sends RETURN Key to: " + locator);
         driver.findElement(locator).sendKeys(Keys.RETURN);
+    }
+
+    public void sendKeysRIGHT(By locator) {
+        System.out.println("Sends right arrow key to: " + locator);
+        driver.findElement(locator).sendKeys(Keys.RIGHT);
     }
 
 }

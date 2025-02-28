@@ -16,9 +16,9 @@ public class ElementsPage extends BasePage {
         return this;
     }
 
-    public ElementsPage sendKeysToSearchbar(String username) {
-        sendKeys.sendKeys(searchBar, username);
-        sendKeys.sendKeysReturn(searchBar);
+    public ElementsPage sendKeysToSearchbar() {
+        sendKeys.sendKeys(searchBar, "Ajvh2254");
+        sendKeys.sendKeysRETURN(searchBar);
         return this;
     }
 

@@ -4,6 +4,7 @@ import capstonefactory.pages.CommonPage;
 import capstonefactory.pages.HomePage;
 import capstonefactory.pages.enums.NodeMenuEnums;
 import capstonefactory.pages.firstnodesection.*;
+import capstonefactory.pages.fourthnodesection.*;
 import capstonefactory.pages.secondnodesection.*;
 import capstonefactory.pages.thirdnodesection.*;
 import capstonefactory.utilities.utils.Waits;
@@ -20,7 +21,7 @@ public class CapstoneTests extends BaseTests {
 
         EditPage editPage = new EditPage();
         editPage.clickFullNameTextBox()
-                .editApplication("Darryn Valentino", " at coding");
+                .editApplication();
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
@@ -41,9 +42,10 @@ public class CapstoneTests extends BaseTests {
 
         DropdownPage dropdownPage = new DropdownPage();
         dropdownPage.selectFruitByVisibleText()
-                .selectMultipleSuperHeroes(new String[]{"Aquaman", "Batman", "Green Lantern"})
+                .selectMultipleSuperHeroes()
+                .getListOfSuperheroes()
                 .selectProgramLanguage()
-                .getLanguageOptions()
+                .getProgramLanguageList()
                 .selectCountryByValue();
         Waits.sleep();
 
@@ -95,7 +97,7 @@ public class CapstoneTests extends BaseTests {
 
         ElementsPage elementsPage = new ElementsPage();
         elementsPage.clickSearchBar()
-                .sendKeysToSearchbar("Ajvh2254")
+                .sendKeysToSearchbar()
                 .isImageDisplayed()
                 .printSearchInfo();
         Waits.sleep();
@@ -122,6 +124,35 @@ public class CapstoneTests extends BaseTests {
 
         SortPage sortPage = new SortPage();
         sortPage.moveTODOElementsToDone();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.WAITS);
+
+        WaitsPage waitsPage = new WaitsPage();
+        waitsPage.clickSimpleAlert()
+                .waitAndAcceptAlert();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.FORMS);
+
+        FormsPage formsPage = new FormsPage();
+        formsPage.fillOutForm();
+        Waits.sleep();
+
+        CommonPage.clickWorkSpaceBtn();
+
+        homePage.selectTestSection(NodeMenuEnums.FILE);
+
+        FilePage filePage = new FilePage();
+        filePage.clickDownloadExcelBtn()
+                .uploadSampleFile()
+                .clickDownloadPdfBtn()
+                .uploadSamplePdf()
+                .clickDownloadTextBtn()
+                .uploadSampleText();
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
