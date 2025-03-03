@@ -81,13 +81,14 @@ public class CapstoneTests extends BaseTests {
 
         TabsPage tabsPage = new TabsPage();
         tabsPage.clickHomeBtn()
-                .printTitleNewTab()
                 .switchToChildWindow()
+                .printTitleNewTab()
                 .closeChildWindow()
                 .clickMultipleWindowsBtn()
-                .printWindowTitle()
                 .switchToDropdownPage()
+                .printWindowTitle()
                 .closeDropdownPage()
+                .printTitle()
                 .closeAlertPage();
         Waits.sleep();
 
