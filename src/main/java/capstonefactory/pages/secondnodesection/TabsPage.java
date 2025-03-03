@@ -14,13 +14,13 @@ public class TabsPage extends BasePage {
         return this;
     }
 
-    public TabsPage printTitleNewTab() {
-        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
+    public TabsPage switchToChildWindow() {
+        windowUtil.switchToActiveTab(1);
         return this;
     }
 
-    public TabsPage switchToChildWindow() {
-        windowUtil.switchToActiveTab(1);
+    public TabsPage printTitleNewTab() {
+        System.out.println(driver.getTitle());
         return this;
     }
 
@@ -34,18 +34,23 @@ public class TabsPage extends BasePage {
         return this;
     }
 
-    public TabsPage printWindowTitle() {
-        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
-        return this;
-    }
-
     public TabsPage switchToDropdownPage() {
         windowUtil.switchToActiveTab(1);
         return this;
     }
 
+    public TabsPage printWindowTitle() {
+        isDisplayed.isElementDisplayed(By.cssSelector("img[alt='letcode']"));
+        return this;
+    }
+
     public TabsPage closeDropdownPage() {
         windowUtil.switchToOriginalTab(1);
+        return this;
+    }
+
+    public TabsPage printTitle() {
+        System.out.println(driver.getTitle());
         return this;
     }
 
