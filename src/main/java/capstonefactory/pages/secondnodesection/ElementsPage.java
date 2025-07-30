@@ -28,9 +28,9 @@ public class ElementsPage extends BasePage {
     }
 
     public void printSearchInfo() {
-        System.out.println(driver.findElement(By.xpath("//span[contains(text(), 'Public Repos')]")));
-        System.out.println(driver.findElement(By.xpath("//span[contains(text(), 'Public Gist')]")));
-        System.out.println(driver.findElement(By.xpath("//span[contains(text(), 'Followers')]")));
+        System.out.println(driver.findElement(By.xpath("//p[contains(text(), 'Public Repos')]")));
+        System.out.println(driver.findElement(By.xpath("//p[contains(text(), 'Public Gist')]")));
+        System.out.println(driver.findElement(By.xpath("//p[contains(text(), 'Followers')]")));
     }
 
 }
