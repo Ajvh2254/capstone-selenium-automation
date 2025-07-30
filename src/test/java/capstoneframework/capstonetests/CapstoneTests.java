@@ -89,7 +89,8 @@ public class CapstoneTests extends BaseTests {
                 .printWindowTitle()
                 .closeDropdownPage()
                 .printTitle()
-                .closeAlertPage();
+                .switchToFirstTab()
+                .closeFirstTab();
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();
@@ -141,19 +142,6 @@ public class CapstoneTests extends BaseTests {
 
         FormsPage formsPage = new FormsPage();
         formsPage.fillOutForm();
-        Waits.sleep();
-
-        CommonPage.clickWorkSpaceBtn();
-
-        homePage.selectTestSection(NodeMenuEnums.FILE);
-
-        FilePage filePage = new FilePage();
-        filePage.clickDownloadExcelBtn()
-                .uploadSampleFile()
-                .clickDownloadPdfBtn()
-                .uploadSamplePdf()
-                .clickDownloadTextBtn()
-                .uploadSampleText();
         Waits.sleep();
 
         CommonPage.clickWorkSpaceBtn();

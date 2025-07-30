@@ -54,7 +54,12 @@ public class TabsPage extends BasePage {
         return this;
     }
 
-    public void closeAlertPage() {
+    public TabsPage switchToFirstTab() {
+        windowUtil.switchToActiveTab(0);
+        return this;
+    }
+
+    public void closeFirstTab() {
         windowUtil.switchToOriginalTab(0);
     }
 
